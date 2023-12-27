@@ -16,29 +16,58 @@
     }
 </style>
 
-<body class="max-w-7xl mx-auto">
+<body>
     <header class="grid grid-cols-2 my-5">
         <h2 class="text-black text-3xl font-bold">Hot Gadgets</h2>
         <button class="text-2xl font-bold bg-green-500 py-2 rounded-md">Sing Up</button>
     </header>
-    <main>
+    <main class="container mx-auto">
+        <section>
+            <input id="input-field" type="text" placeholder="Search phone..."
+                class="input p-4 m-2 input-bordered w-full max-w-xs" />
+            <button onclick="handleButton()" class="btn btn-active btn-accent font-bold">search</button>
+        </section>
+
         <div class="text-center my-12">
-            <h1 class="text-6xl font-bold">Apple Iphone 13 Pro Max</h1>
-            <p class="w-2/3 text-lg mx-auto my-4">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humou.</p>
+            <h1 class="text-6xl font-bold">All phone</h1>
+            <p class="w-2/3 text-lg mx-auto my-4">There are many variations of passages of Lorem Ipsum available, but
+                the majority have suffered alteration in some form, by injected humou.</p>
             <button class="bg-green-400 py-2 px-5 rounded-md items-center">Buy now</button>
             <img src="" alt="">
         </div>
+        <div id="spinner-load" class="text-center my-40 hidden">
+            <span class="loading loading-spinner text-purple-700 loading-lg"></span>
+            <span class="loading loading-spinner text-warning loading-lg"></span>
+            <span class="loading loading-spinner text-error loading-lg"></span>
+        </div>
         <section>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-2" id="phone-container">
-               
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" id="phone-container">
+
+            </div>
+            <div id="show-phone-container" class="hidden">
+                <button class="btn btn-info">Show all</button>
             </div>
         </section>
-    </main>
-    <footer>
 
-    </footer>
+        <!-- single data show -->
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog id="singleDetailsShow" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <h3 class="font-bold text-lg">Hello!</h3>
+                <p class="py-4">Press ESC key or click the button below to close</p>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+        <footer>
 
-    <script src="./js/phone.js"></script>
+        </footer>
+
+        <script src="./js/phone.js"></script>
 </body>
 
 </html>
